@@ -39,9 +39,12 @@ export default function URLShortner() {
     }
   }
 
+  // const HandleVisit = () => {
+  //   window.open(generated, "_blank");
+  // };
   const HandleVisit = () => {
-    window.open(generated, "_blank");
-  };
+  window.location.href = generated;
+};
 
   const generate = async () => {
 

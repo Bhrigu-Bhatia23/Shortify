@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-    title: "ShortLink",
+    title: "Shortify",
     description:
         "Create, manage, edit and track your short links with ease.",
 };
