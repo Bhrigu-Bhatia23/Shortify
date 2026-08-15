@@ -17,3 +17,4 @@ export default async function Page({ params }) {
         redirect(`${process.env.NEXT_PUBLIC_URL}`)
     }
 }
+

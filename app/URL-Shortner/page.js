@@ -39,13 +39,10 @@ export default function URLShortner() {
     }
   }
 
-  // const HandleVisit = () => {
-  //   window.open(generated, "_blank");
-  // };
   const HandleVisit = () => {
-  window.location.href = generated;
-};
-
+    window.open(generated, "_blank");
+  };
+ 
   const generate = async () => {
 
     if (url === "" || shortUrl === "") {
