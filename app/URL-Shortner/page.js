@@ -6,7 +6,7 @@ import { useSession } from "next-auth/react";
 
 export default function URLShortner() {
 
-  const {data: session} = useSession()
+  const { data: session } = useSession()
 
   const [url, setUrl] = useState("");
   const [shortUrl, setShortUrl] = useState("");
@@ -42,7 +42,8 @@ export default function URLShortner() {
   const HandleVisit = () => {
     window.open(generated, "_blank");
   };
- 
+
+
   const generate = async () => {
 
     if (url === "" || shortUrl === "") {
@@ -172,7 +173,7 @@ export default function URLShortner() {
               </p>
 
               <div className="mt-4 flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
-                {generated ? (<h2
+                {/* {generated ? (<h2
                   onClick={HandleVisit}
                   className="text-xl font-semibold text-white break-all hover:underline cursor-pointer">
                   {generated}
@@ -180,7 +181,21 @@ export default function URLShortner() {
                   (<h2
                     className="md:text-xl text-sm font-semibold text-white break-all">
                     linksnap.vercel.app/my-link
-                  </h2>)}
+                  </h2>)} */}
+                {generated ? (
+                  <a
+                    href={generated}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xl font-semibold text-white break-all hover:underline cursor-pointer"
+                  >
+                    {generated}
+                  </a>
+                ) : (
+                  <h2 className="md:text-xl text-sm font-semibold text-white break-all">
+                    linksnap.vercel.app/my-link
+                  </h2>
+                )}
 
                 <div className="flex gap-4">
 
