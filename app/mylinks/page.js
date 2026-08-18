@@ -34,8 +34,19 @@ const Page = () => {
 
     useEffect(() => {
         fetchLinks();
+
+        const handleFocus = () => {
+            fetchLinks();
+        };
+
+        window.addEventListener("focus", handleFocus);
+
+        return () => {
+            window.removeEventListener("focus", handleFocus);
+        };
     }, []);
 
+    
     // COPY
     const handleCopy = async (link) => {
         const shortLink = `${process.env.NEXT_PUBLIC_URL}/${link.shortUrl}`;
@@ -83,15 +94,6 @@ const Page = () => {
             toast.error(editJson.message);
         }
     };
-
-    // VISIT
-    // const handleVisit = (link) => {
-    //     window.open(
-    //         `${process.env.NEXT_PUBLIC_URL}/${link.shortUrl}`,
-    //         "_blank"
-    //     );
-    //     fetchLinks()
-    // };
 
 
     // DELETE
@@ -236,12 +238,6 @@ const Page = () => {
 
                             {mostPopularLink ? (
                                 <>
-                                    {/* <h2
-                                        onClick={() => handleVisit(mostPopularLink)}
-                                        className="mt-3 cursor-pointer text-2xl font-bold text-cyan-400">
-                                        /{mostPopularLink.shortUrl}
-                                    </h2> */}
-
                                     <a
                                         href={`${process.env.NEXT_PUBLIC_URL}/${mostPopularLink.shortUrl}`}
                                         target="_blank"
@@ -317,13 +313,6 @@ const Page = () => {
 
                                         {/* URL Information */}
                                         <div>
-
-                                            {/* <h2
-                                                onClick={() => handleVisit(link)}
-                                                className="cursor-pointer text-3xl font-bold text-cyan-400 transition duration-300 hover:scale-[1.02] hover:text-cyan-300"
-                                            >
-                                                /{link.shortUrl}
-                                            </h2> */}
 
                                             <a
                                                 href={`${process.env.NEXT_PUBLIC_URL}/${link.shortUrl}`}
@@ -512,7 +501,6 @@ const Page = () => {
         </>
     );
 };
-
 
 
 export default Page;
