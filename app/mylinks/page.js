@@ -87,7 +87,8 @@ const Page = () => {
     // VISIT
     const handleVisit = (link) => {
         window.open(
-            `${process.env.NEXT_PUBLIC_URL}/${link.shortUrl}`,
+            `${process.env.NEXT_PUBLIC_URL}/${shortUrl}`,
+            //`${process.env.NEXT_PUBLIC_URL}/${link.shortUrl}`,
             "_blank"
         );
         fetchLinks()
