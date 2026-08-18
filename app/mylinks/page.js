@@ -92,11 +92,6 @@ const Page = () => {
     //     );
     //     fetchLinks()
     // };
-    const handleVisit = (link) => {
-        const shortLink = `https://shortify-lake.vercel.app/${link.shortUrl}`;
-
-        window.open(shortLink, "_blank", "noopener,noreferrer");
-    };
 
 
     // DELETE
@@ -241,11 +236,20 @@ const Page = () => {
 
                             {mostPopularLink ? (
                                 <>
-                                    <h2
+                                    {/* <h2
                                         onClick={() => handleVisit(mostPopularLink)}
                                         className="mt-3 cursor-pointer text-2xl font-bold text-cyan-400">
                                         /{mostPopularLink.shortUrl}
-                                    </h2>
+                                    </h2> */}
+
+                                    <a
+                                        href={`${process.env.NEXT_PUBLIC_URL}/${mostPopularLink.shortUrl}`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="mt-3 block cursor-pointer text-2xl font-bold text-cyan-400"
+                                    >
+                                        /{mostPopularLink.shortUrl}
+                                    </a>
 
                                     <p className="mt-2 text-sm text-gray-500">
                                         {mostPopularLink.clicks} clicks
@@ -314,12 +318,21 @@ const Page = () => {
                                         {/* URL Information */}
                                         <div>
 
-                                            <h2
+                                            {/* <h2
                                                 onClick={() => handleVisit(link)}
                                                 className="cursor-pointer text-3xl font-bold text-cyan-400 transition duration-300 hover:scale-[1.02] hover:text-cyan-300"
                                             >
                                                 /{link.shortUrl}
-                                            </h2>
+                                            </h2> */}
+
+                                            <a
+                                                href={`${process.env.NEXT_PUBLIC_URL}/${link.shortUrl}`}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="block cursor-pointer text-3xl font-bold text-cyan-400 transition duration-300 hover:scale-[1.02] hover:text-cyan-300"
+                                            >
+                                                /{link.shortUrl}
+                                            </a>
 
                                             <p className="mt-3 break-all text-md  text-gray-400">
                                                 {link.url}
