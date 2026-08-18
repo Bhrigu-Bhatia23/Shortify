@@ -95,9 +95,7 @@ const Page = () => {
     const handleVisit = (link) => {
         const shortLink = `https://shortify-lake.vercel.app/${link.shortUrl}`;
 
-        console.log("Opening:", shortLink);
-
-        window.location.href = shortLink;
+        window.open(shortLink, "_blank", "noopener,noreferrer");
     };
 
 
