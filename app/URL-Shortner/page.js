@@ -39,9 +39,9 @@ export default function URLShortner() {
     }
   }
 
-  const HandleVisit = () => {
-    window.open(generated, "_blank");
-  };
+  // const HandleVisit = () => {
+  //   window.open(generated, "_blank");
+  // };
 
 
   const generate = async () => {
@@ -173,16 +173,20 @@ export default function URLShortner() {
               </p>
 
               <div className="mt-4 flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
-                {generated ? (<h2
-                  onClick={HandleVisit}
-                  className="text-xl font-semibold text-white break-all hover:underline cursor-pointer">
-                  {generated}
-                </h2>) :
+                {generated ? (
+                  <a
+                    href={generated}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xl font-semibold text-white break-all hover:underline cursor-pointer"
+                  >
+                    {generated}
+                  </a>) :
                   (<h2
                     className="md:text-xl text-sm font-semibold text-white break-all">
                     linksnap.vercel.app/my-link
-                </h2>)} 
-              
+                  </h2>)}
+
                 <div className="flex gap-4">
 
                   <button
