@@ -147,7 +147,7 @@ export default function Contact() {
 
               <button
                 onClick={() => HandleClick()}
-                className="w-full rounded-2xl bg-gradient-to-r from-violet-600 to-cyan-500 py-4 text-lg font-semibold hover:opacity-90 transition">
+                className="w-full cursor-pointer rounded-2xl bg-gradient-to-r from-violet-600 to-cyan-500 py-4 text-lg font-semibold hover:opacity-90 transition">
                 Send Message
               </button>
 

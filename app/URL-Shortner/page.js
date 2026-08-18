@@ -39,11 +39,6 @@ export default function URLShortner() {
     }
   }
 
-  // const HandleVisit = () => {
-  //   window.open(generated, "_blank");
-  // };
-
-
   const generate = async () => {
 
     if (url === "" || shortUrl === "") {
@@ -158,7 +153,7 @@ export default function URLShortner() {
 
               <button
                 onClick={generate}
-                className="w-full rounded-2xl bg-gradient-to-r from-violet-600 to-cyan-500 py-4 text-lg font-semibold transition hover:scale-[1.02]">
+                className="w-full cursor-pointer rounded-2xl bg-gradient-to-r from-violet-600 to-cyan-500 py-4 text-lg font-semibold transition hover:scale-[1.02]">
                 Generate Short Link
               </button>
 
