@@ -85,12 +85,19 @@ const Page = () => {
     };
 
     // VISIT
+    // const handleVisit = (link) => {
+    //     window.open(
+    //         `${process.env.NEXT_PUBLIC_URL}/${link.shortUrl}`,
+    //         "_blank"
+    //     );
+    //     fetchLinks()
+    // };
     const handleVisit = (link) => {
-        window.open(
-            `${process.env.NEXT_PUBLIC_URL}/${link.shortUrl}`,
-            "_blank"
-        );
-        fetchLinks()
+        const shortLink = `https://shortify-lake.vercel.app/${link.shortUrl}`;
+
+        console.log("Opening:", shortLink);
+
+        window.location.href = shortLink;
     };
 
 
